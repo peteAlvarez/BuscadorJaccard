@@ -180,3 +180,24 @@ button:hover{
     }
 
 }
+
+.logo-container{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.logo-img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    margin-bottom:12px;
+}
+
+@media(max-width:768px){
+
+    .logo-img{
+        width:90px;
+        height:90px;
+    }
+
+}
