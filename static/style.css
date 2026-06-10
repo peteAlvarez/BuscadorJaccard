@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f9fa;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #202124;
+    font-size: 42px;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+input[type="text"] {
+    width: 650px;
+    max-width: 90%;
+    padding: 16px 24px;
+    font-size: 17px;
+    border: 1px solid #dfe1e5;
+    border-radius: 30px;
+    outline: none;
+    background: white;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    border-color: transparent;
+}
+
+button {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1765c1;
+    transform: translateY(-1px);
+}
+
+.resultado {
+    background: white;
+    width: 85%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    transition: 0.25s;
+}
+
+.resultado:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.documento {
+    color: #1a73e8;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.similitud {
+    color: #188038;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.contenido {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    background: white;
+    width: 80%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    color: #d93025;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    .resultado {
+        width: 95%;
+    }
+}

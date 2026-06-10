@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscador Jaccard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Buscador de Documentos con Jaccard</h1>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="consulta"
+            placeholder="Ingrese una o varias palabras"
+            required>
+
+        <button type="submit">
+            Buscar
+        </button>
+
+    </form>
+
+    {% if resultados %}
+
+        {% for resultado in resultados %}
+
+            <div class="resultado">
+
+                <h3 class="documento">
+                    {{ resultado.documento }}
+                </h3>
+
+                <p class="similitud">
+                    Similitud: {{ resultado.similitud }}%
+                </p>
+
+                <p class="contenido">
+                    {{ resultado.contenido }}
+                </p>
+
+            </div>
+
+        {% endfor %}
+
+    {% elif request.method == "POST" %}
+
+        <div class="resultado">
+            <h3>
+                No se han encontrado documentos que contengan las palabras buscadas.
+            </h3>
+        </div>
+
+    {% endif %}
+
+</body>
+</html>
