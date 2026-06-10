@@ -1,177 +1,159 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f8f9fa;
-    min-height: 100vh;
-    padding: 40px 20px;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f8f9fa;
+    min-height:100vh;
 }
 
-h1 {
-    text-align: center;
-    color: #202124;
-    font-size: 42px;
-    margin-bottom: 35px;
-    font-weight: 500;
+.contenedor{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
 }
 
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
+.logo{
+    text-align:center;
+    font-size:60px;
+    color:#1a73e8;
+    margin-bottom:10px;
 }
 
-input[type="text"] {
-    width: 650px;
-    max-width: 90%;
-    padding: 16px 24px;
-    font-size: 17px;
-    border: 1px solid #dfe1e5;
-    border-radius: 30px;
-    outline: none;
-    background: white;
-    transition: 0.3s;
+.subtitulo{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
 }
 
-input[type="text"]:focus {
-    box-shadow: 0 1px 6px rgba(32,33,36,.28);
-    border-color: transparent;
+form{
+    display:flex;
+    gap:10px;
+    margin-bottom:30px;
 }
 
-button {
-    background: #1a73e8;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
+input{
+    flex:1;
+    padding:18px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    font-size:16px;
 }
 
-button:hover {
-    background: #1765c1;
+button{
+    background:#1a73e8;
+    color:white;
+    border:none;
+    padding:18px 25px;
+    border-radius:30px;
+    cursor:pointer;
 }
 
-.resultado-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
+button:hover{
+    background:#1557b0;
 }
 
-.resultado {
-    background: white;
-    width: 85%;
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(0,0,0,.08);
-    transition: .25s;
+.resultado-link{
+    text-decoration:none;
+    color:inherit;
 }
 
-.resultado:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+.resultado{
+    background:white;
+    padding:25px;
+    margin-bottom:15px;
+    border-radius:16px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    transition:.2s;
 }
 
-.documento {
-    color: #1a73e8;
-    font-size: 24px;
-    margin-bottom: 12px;
+.resultado:hover{
+    transform:translateY(-3px);
 }
 
-.similitud {
-    color: #188038;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.documento{
+    color:#1a73e8;
+    margin-bottom:8px;
 }
 
-.contenido {
-    color: #444;
-    font-size: 16px;
-    line-height: 1.7;
+.similitud{
+    color:green;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
-.volver {
-    display: inline-block;
-    margin-top: 15px;
-    background: #1a73e8;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 10px;
-    text-decoration: none;
+.contenido{
+    color:#444;
+    line-height:1.7;
 }
 
-.volver:hover {
-    background: #1557b0;
+.mensaje-vacio{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    text-align:center;
+    font-weight:bold;
 }
 
-.mensaje-vacio {
-    text-align: center;
-    background: white;
-    width: 80%;
-    max-width: 700px;
-    margin: 30px auto;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(0,0,0,.08);
-    color: #d93025;
-    font-size: 20px;
-    font-weight: bold;
+.contenedor-documento{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
 }
 
-/* RESPONSIVE IPHONE Y ANDROID */
+.volver{
+    text-decoration:none;
+    color:#1a73e8;
+    font-weight:bold;
+}
 
-@media screen and (max-width: 768px) {
+@media(max-width:768px){
 
-    body {
-        padding: 15px;
+    .contenedor{
+        padding:30px 15px;
     }
 
-    h1 {
-        font-size: 28px;
+    .logo{
+        font-size:42px;
+        margin-top:40px;
     }
 
-    form {
-        flex-direction: column;
+    .subtitulo{
+        font-size:18px;
     }
 
-    input[type="text"] {
-        width: 100%;
-        max-width: 100%;
+    form{
+        flex-direction:column;
     }
 
-    button {
-        width: 100%;
+    input{
+        width:100%;
+        font-size:18px;
+        padding:18px;
     }
 
-    .resultado {
-        width: 100%;
-        padding: 18px;
+    button{
+        width:100%;
+        font-size:18px;
     }
 
-    .documento {
-        font-size: 20px;
+    .resultado{
+        padding:20px;
     }
 
-    .similitud {
-        font-size: 16px;
+    .documento{
+        font-size:22px;
     }
 
-    .contenido {
-        font-size: 15px;
+    .similitud{
+        font-size:17px;
     }
 
-    .volver {
-        display: block;
-        text-align: center;
+    .contenido{
+        font-size:16px;
     }
+
 }

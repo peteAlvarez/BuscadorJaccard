@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <title>{{ nombre }}</title>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='style.css') }}"
-    >
+<title>{{ nombre }}</title>
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}"
+>
 
 </head>
 
 <body>
 
+<div class="contenedor-documento">
+
+    <a href="/" class="volver">
+
+        ← Volver al buscador
+
+    </a>
+
+    <h1>
+
+        {{ nombre.replace('.txt','').replace('_',' ').title() }}
+
+    </h1>
+
     <div class="resultado">
 
-        <h1>
-            {{ nombre.replace('.txt', '').replace('_', ' ').title() }}
-        </h1>
-
         <p class="contenido">
+
             {{ contenido }}
+
         </p>
 
-        <br>
-
-        <a class="volver" href="/">
-            ← Volver al buscador
-        </a>
-
     </div>
+
+</div>
 
 </body>
 </html>

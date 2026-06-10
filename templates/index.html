@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <title>Buscador Jaccard</title>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
 
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='style.css') }}"
-    >
+<title>SearchLens</title>
+
+<link
+rel="icon"
+href="{{ url_for('static', filename='favicon.png') }}"
+>
+
+<link
+rel="apple-touch-icon"
+href="{{ url_for('static', filename='favicon.png') }}"
+>
+
+<meta
+name="apple-mobile-web-app-title"
+content="SearchLens"
+>
+
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}"
+>
 
 </head>
 
 <body>
 
-    <h1>🔍 Buscador de Documentos</h1>
+<div class="contenedor">
+
+    <h1 class="logo">
+        🔍 SearchLens
+    </h1>
+
+    <p class="subtitulo">
+        Encuentra información de manera rápida
+    </p>
 
     <form method="POST">
 
         <input
             type="text"
             name="consulta"
-            placeholder="Ingrese una o varias palabras"
+            placeholder="Ingresa una o varias palabras..."
             required
         >
 
@@ -36,28 +65,35 @@
 
         {% for resultado in resultados %}
 
-            <a
-                href="/documento/{{ resultado.documento }}"
-                class="resultado-link"
-            >
+        <a
+            href="/documento/{{ resultado.documento }}"
+            class="resultado-link"
+        >
 
-                <div class="resultado">
+            <div class="resultado">
 
-                    <h3 class="documento">
-                        {{ resultado.titulo }}
-                    </h3>
+                <h3 class="documento">
 
-                    <p class="similitud">
-                        Similitud: {{ resultado.similitud }}%
-                    </p>
+                    {{ resultado.titulo }}
 
-                    <p class="contenido">
-                        {{ resultado.contenido }}
-                    </p>
+                </h3>
 
-                </div>
+                <p class="similitud">
 
-            </a>
+                    Similitud:
+                    {{ resultado.similitud }}%
+
+                </p>
+
+                <p class="contenido">
+
+                    {{ resultado.contenido }}
+
+                </p>
+
+            </div>
+
+        </a>
 
         {% endfor %}
 
@@ -65,11 +101,13 @@
 
         <div class="mensaje-vacio">
 
-            No se han encontrado documentos que contengan las palabras buscadas.
+            No se encontraron documentos con esas palabras.
 
         </div>
 
     {% endif %}
+
+</div>
 
 </body>
 </html>

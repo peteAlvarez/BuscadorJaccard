@@ -3,7 +3,6 @@ import pickle
 
 app = Flask(__name__)
 
-# Cargar índice al iniciar
 with open("indice/indice.pkl", "rb") as f:
     indice = pickle.load(f)
 
@@ -27,7 +26,9 @@ def inicio():
 
         consulta_texto = request.form["consulta"]
 
-        consulta = set(consulta_texto.lower().split())
+        consulta = set(
+            consulta_texto.lower().split()
+        )
 
         for nombre_doc, palabras_doc in indice.items():
 
