@@ -1,27 +1,11 @@
-# 🔍 Buscador Local de Documentos con Similitud de Jaccard
-
-Proyecto desarrollado para la asignatura de Recuperación de Información.
-
-## 📌 Descripción
+Buscador Local de Documentos con Similitud de Jaccard
 
 Este proyecto implementa un buscador local en ambiente web utilizando Python y Flask.
-
 El sistema trabaja sobre una colección de 200 documentos de texto generados automáticamente. Cada documento contiene entre 5 y 10 palabras sin tildes ni signos de puntuación.
-
 La búsqueda se realiza utilizando la técnica de similitud de Jaccard, permitiendo ordenar los documentos según su grado de coincidencia con la consulta ingresada por el usuario.
 
----
 
-## 👥 Integrantes
-
-- Nombre Apellido
-- Nombre Apellido
-- Nombre Apellido
-- Nombre Apellido
-
----
-
-# ⚙️ Tecnologías utilizadas
+⚙️ Tecnologías utilizadas
 
 - Python
 - Flask
@@ -30,9 +14,8 @@ La búsqueda se realiza utilizando la técnica de similitud de Jaccard, permitie
 - GitHub
 - Render
 
----
 
-# 🏗️ Estructura del proyecto
+Estructura del proyecto
 
 ```
 BuscadorJaccard/
@@ -53,7 +36,7 @@ BuscadorJaccard/
 
 ---
 
-# 📚 Fase Offline
+ Fase Offline
 
 La fase offline se ejecuta una sola vez y tiene como objetivo preparar la colección documental para las búsquedas.
 
