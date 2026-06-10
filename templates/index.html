@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
     <meta charset="UTF-8">
+
     <title>Buscador Jaccard</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
 </head>
+
 <body>
 
-    <h1>Buscador de Documentos con Jaccard</h1>
+    <h1>🔍 Buscador de Documentos</h1>
 
     <form method="POST">
 
@@ -17,7 +23,8 @@
             type="text"
             name="consulta"
             placeholder="Ingrese una o varias palabras"
-            required>
+            required
+        >
 
         <button type="submit">
             Buscar
@@ -29,30 +36,37 @@
 
         {% for resultado in resultados %}
 
-            <div class="resultado">
+            <a
+                href="/documento/{{ resultado.documento }}"
+                class="resultado-link"
+            >
 
-                <h3 class="documento">
-                    {{ resultado.documento }}
-                </h3>
+                <div class="resultado">
 
-                <p class="similitud">
-                    Similitud: {{ resultado.similitud }}%
-                </p>
+                    <h3 class="documento">
+                        {{ resultado.titulo }}
+                    </h3>
 
-                <p class="contenido">
-                    {{ resultado.contenido }}
-                </p>
+                    <p class="similitud">
+                        Similitud: {{ resultado.similitud }}%
+                    </p>
 
-            </div>
+                    <p class="contenido">
+                        {{ resultado.contenido }}
+                    </p>
+
+                </div>
+
+            </a>
 
         {% endfor %}
 
     {% elif request.method == "POST" %}
 
-        <div class="resultado">
-            <h3>
-                No se han encontrado documentos que contengan las palabras buscadas.
-            </h3>
+        <div class="mensaje-vacio">
+
+            No se han encontrado documentos que contengan las palabras buscadas.
+
         </div>
 
     {% endif %}

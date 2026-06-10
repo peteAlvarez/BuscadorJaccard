@@ -46,28 +46,44 @@ def inicio():
 
             resultados.append({
                 "documento": nombre_doc,
+                "titulo": nombre_doc.replace(".txt", "").replace("_", " ").title(),
                 "similitud": round(similitud * 100, 2),
                 "contenido": contenido
             })
 
-        # Ordenar de mayor a menor similitud
         resultados.sort(
             key=lambda x: x["similitud"],
             reverse=True
         )
 
-        # Mostrar solo los que tienen coincidencia
         resultados = [
             r for r in resultados
             if r["similitud"] > 0
         ]
 
-        # Top 10
         resultados = resultados[:10]
 
     return render_template(
         "index.html",
         resultados=resultados
+    )
+
+
+@app.route("/documento/<nombre>")
+def ver_documento(nombre):
+
+    with open(
+        f"documentos/{nombre}",
+        "r",
+        encoding="utf-8"
+    ) as archivo:
+
+        contenido = archivo.read()
+
+    return render_template(
+        "documento.html",
+        nombre=nombre,
+        contenido=contenido
     )
 
 

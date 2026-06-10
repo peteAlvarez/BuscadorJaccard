@@ -41,7 +41,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
     border-color: transparent;
 }
 
@@ -53,12 +53,16 @@ button {
     border-radius: 30px;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover {
     background: #1765c1;
-    transform: translateY(-1px);
+}
+
+.resultado-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .resultado {
@@ -68,13 +72,13 @@ button:hover {
     margin: 20px auto;
     padding: 25px;
     border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    transition: 0.25s;
+    box-shadow: 0 4px 14px rgba(0,0,0,.08);
+    transition: .25s;
 }
 
 .resultado:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
 }
 
 .documento {
@@ -85,15 +89,29 @@ button:hover {
 
 .similitud {
     color: #188038;
-    font-weight: bold;
     font-size: 18px;
-    margin-bottom: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .contenido {
     color: #444;
     font-size: 16px;
     line-height: 1.7;
+}
+
+.volver {
+    display: inline-block;
+    margin-top: 15px;
+    background: #1a73e8;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.volver:hover {
+    background: #1557b0;
 }
 
 .mensaje-vacio {
@@ -104,31 +122,56 @@ button:hover {
     margin: 30px auto;
     padding: 30px;
     border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 14px rgba(0,0,0,.08);
     color: #d93025;
     font-size: 20px;
     font-weight: bold;
 }
 
-@media (max-width: 768px) {
+/* RESPONSIVE IPHONE Y ANDROID */
+
+@media screen and (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
 
     h1 {
-        font-size: 30px;
-    }
-
-    input[type="text"] {
-        width: 100%;
-    }
-
-    button {
-        width: 100%;
+        font-size: 28px;
     }
 
     form {
         flex-direction: column;
     }
 
+    input[type="text"] {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
     .resultado {
-        width: 95%;
+        width: 100%;
+        padding: 18px;
+    }
+
+    .documento {
+        font-size: 20px;
+    }
+
+    .similitud {
+        font-size: 16px;
+    }
+
+    .contenido {
+        font-size: 15px;
+    }
+
+    .volver {
+        display: block;
+        text-align: center;
     }
 }

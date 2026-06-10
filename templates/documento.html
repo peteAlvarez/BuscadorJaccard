@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>{{ nombre }}</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="resultado">
+
+        <h1>
+            {{ nombre.replace('.txt', '').replace('_', ' ').title() }}
+        </h1>
+
+        <p class="contenido">
+            {{ contenido }}
+        </p>
+
+        <br>
+
+        <a class="volver" href="/">
+            ← Volver al buscador
+        </a>
+
+    </div>
+
+</body>
+</html>
